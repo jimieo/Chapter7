@@ -11,9 +11,10 @@ public class FirstProblem {
             array[i] = input.intValue();
             doublearray[i] = input;
         }
+        double minimum = min(doublearray);
         System.out.println("The int average is: "+ average(array));
         System.out.println("The double average is: "+ average(doublearray));
-        //System.out.println("The min is: "+ min(array));
+        System.out.println("The min is: "+ min(doublearray));
 	}
 	
 	public static int average(int[] array) {
@@ -25,13 +26,13 @@ public class FirstProblem {
 		return areyouproud;
 	}
 	public static double min(double[] array){
-		double min = array[0];
-	    for (int i = 1; i <= array.length - 1; i++) {
-	        if (min > array[i]) {
-	            min = array[i];
-	        }
-	    }
-		return 0;
+		double minimum = array[0];
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] < minimum) {
+				minimum = array[i];	
+			}
+		}
+		return minimum;
 
 	}
 

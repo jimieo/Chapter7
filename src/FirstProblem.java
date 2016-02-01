@@ -2,28 +2,37 @@ import java.util.Scanner;
 
 public class FirstProblem {
 	public static void main(String[] args) {
+		System.out.print("Enter ten numbers: ");	
 		Scanner scnr = new Scanner(System.in);
-		System.out.print("Enter ten numbers: ");		
         int[] array = new int[10];
         double[] doublearray = new double[array.length];
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < array.length; i++){
             Double input = scnr.nextDouble();
             array[i] = input.intValue();
             doublearray[i] = input;
         }
-        System.out.println("The average is: "+ average(array));
+        System.out.println("The int average is: "+ average(array));
         System.out.println("The double average is: "+ average(doublearray));
+        //System.out.println("The min is: "+ min(array));
 	}
 	
 	public static int average(int[] array) {
-		int sum = 0;
-		int areyouproud = ((array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7] + array[8] + array[9]) / 10);
+		int areyouproud = ((array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7] + array[8] + array[9]) / array.length);
 		return areyouproud;
 	}
 	public static double average(double[] array) {
-		double sum = 0;
-		double areyouproud = ((array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7] + array[8] + array[9]) / 10.0);
+		double areyouproud = ((array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7] + array[8] + array[9]) / array.length);
 		return areyouproud;
+	}
+	public static double min(double[] array){
+		double min = array[0];
+	    for (int i = 1; i <= array.length - 1; i++) {
+	        if (min > array[i]) {
+	            min = array[i];
+	        }
+	    }
+		return 0;
+
 	}
 
 }
